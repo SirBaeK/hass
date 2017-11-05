@@ -1,0 +1,8 @@
+Weather:
+  view: yes
+  icon: mdi:temperature-celsius
+  name: Pocasi
+  entities:
+   - group.sun
+   - group.conditions
+   - group.iss

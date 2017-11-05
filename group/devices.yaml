@@ -1,0 +1,10 @@
+devices:
+  name: Zazizeni
+  view: yes
+  icon: mdi:account-multiple
+  entities:
+   - group.all_devices
+
+
+
+

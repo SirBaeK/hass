@@ -1,0 +1,6 @@
+people:
+  name: Lide
+  icon: mdi:account-multiple
+  entities:
+   - group.all_devices
+   - device_tracker.kuba_iphone

@@ -1,0 +1,4 @@
+- platform: wake_on_lan
+  mac_address: '30:3A:64:EC:48:02'
+  name: DESKTOP2-KUBA
+  host: 192.168.2.22

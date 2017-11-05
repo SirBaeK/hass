@@ -1,0 +1,5 @@
+  restart_ha: sudo service hass-daemon restart &
+#  shutdown_pc: '/usr/bin/curl -X GET "http://10.10.10.217:7760/poweroff"'
+#  restart_pc: '/usr/bin/curl -X GET "http://10.10.10.217:7760/reboot"'
+#  sleep_pc: '/usr/bin/curl -X GET "http://10.10.10.217:7760/suspend"'
+#  hibernate_pc: '/usr/bin/curl -X GET "http://10.10.10.217:7760/hibernate"'

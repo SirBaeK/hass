@@ -1,0 +1,82 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitudeH
+  longitude: !secret longitudeH
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: Europe/Prague
+  temperature_unit: C
+  customize: !include_dir_merge_named customizations
+# Enables the frontend
+frontend:
+  themes: !include_dir_merge_named themes/
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  # api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: 192.168.2.14:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+recorder:
+  purge_days: 30
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+logger:
+  default: warn
+  logs:
+    homeassistant.components.mqtt: debug
+    homeassistant.components.device_tracker: critical
+    homeassistant.components.sensor: info
+    homeassistant.components.automation: debug
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+input_select: !include_dir_merge_named input_select  
+group: !include_dir_merge_named group/
+
+sensor: !include sensor.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+binary_sensor: !include binary_sensor.yaml
+tts: !include tts.yaml
+device_tracker: !include device_tracker.yaml
+notify: !include notify.yaml
+media_player: !include media_player.yaml
+weather: !include weather.yaml
+switch: !include switch.yaml
+shell_command: !include shell_commands.yaml
+weblink: !include weblink.yaml
+camera: !include camera.yaml
+android_ip_webcam: !include android_ip_webcam.yaml
+mqtt: !include mqtt.yaml
+binary_sensor: !include binary_sensor.yaml
+
+ 
+shopping_list:
+
+

@@ -1,0 +1,9 @@
+Settings:
+  view: yes
+  name: Settings
+  icon: mdi:settings
+  entities:
+  - group.triggers
+  - group.Miscellaneous
+  - group.scripts
+  - group.Automation

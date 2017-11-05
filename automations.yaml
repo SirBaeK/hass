@@ -1,0 +1,158 @@
+- alias: hass_update_notifications
+  id: 'Update Available Notifications'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.notify
+    data:
+      message: 'Update for Home Assistant is available.'
+      
+- alias: hass_update_pushbullet 
+  id: 'Update Available Pushbullet'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.PUSHBULLET
+    data:
+      message: 'Update for Home Assistant is available.'
+      
+- alias: log_level_select
+  id: 'Log Level'
+  trigger:
+    platform: state
+    entity_id: input_select.log_level
+  action:
+    service: logger.set_level
+    
+- alias: tts_cache_clear
+  id: 'Flush TTS Cache'
+  hide_entity: True
+  trigger:
+    platform: time
+    at: '2:35:00'
+  action:
+   service: tts.clear_cache
+   
+- alias: hass_start
+  id: 'Home Assistant Start - Notify'
+  trigger:
+    platform: event
+    event_type: homeassistant_start
+  action:
+    service: notify.PUSHBULLET
+    data:
+      message: 'Home Assistant Start at {{ states('sensor.date__time') }}'
+
+- alias: hass_stop
+  id: 'Home Assistant Stop - Notify'
+  trigger:
+    platform: event
+    event_type: homeassistant_stop
+  action:
+    service: notify.PUSHBULLET
+    data:
+      message: 'Home Assistant Stop at {{ states('sensor.date__time') }}'
+
+- alias: darkorange_theme
+  id: 'Nastav theme na darkorange'
+  trigger:
+    platform: state
+    entity_id: sun.sun
+    from: above_horizon
+    to: below_horizon    
+  action: 
+    service: frontend.set_theme
+    data:
+      name: darkorange
+
+- alias: pc_restart
+  id: PC Restart
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    to: "Restart"
+  action:
+   - service: shell_command.restart_pc
+   - service: notify.PUSHBULLET
+     data:
+       message: "PC Restart at {{ states('sensor.date__time') }}"  
+
+####################################################
+#                   PC Shutdown                    #
+####################################################
+
+- id: PC Restart
+  alias: pc_shutdown
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    to: "Shutdown"
+  action:
+   - service: shell_command.shutdown_pc
+   - service: notify.PUSHBULLET
+     data:
+       message: "PC Shutdown at {{ states('sensor.date__time') }}"
+
+####################################################
+#                   PC Sleep                       #
+####################################################
+
+- id: PC Sleep
+  alias: pc_sleep
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    to: "Sleep"
+  action:
+   - service: shell_command.sleep_pc
+   - service: notify.PUSHBULLET
+     data:
+       message: "PC Sleep at {{ states('sensor.date__time') }}"
+
+####################################################
+#                   PC Hibernate                   #
+####################################################
+
+- id: PC Hibernate
+  alias: pc_hibernate
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    to: "Hibernate"
+  action:
+   - service: shell_command.hibernate_pc
+   - service: notify.PUSHBULLET
+     data:
+       message: "PC Hibernated at {{ states('sensor.date__time') }}"
+       
+- id: Notify on sunrise
+  alias: Sunrise
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '+00:00:00'
+  action:
+    # Actions are scripts so can also be a list of actions
+    - service: notify.pushbullet
+      data:
+        message: "Beautiful sunrise!"
+    - service: notify.PUSHBULLET
+      data:
+        message: "The sun is up. Wake Up! {{ states('sensor.date__time') }}"
+
+- id: Notify on sunset
+  alias: Sunset
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '+00:00:00'
+  action:
+    # Actions are scripts so can also be a list of actions
+    - service: notify.PUSHBULLET
+      data:
+        message: "Beautiful sunset!"
+    - service: notify.PUSHBULLET
+      data:
+        message: "Oh wow you really missed something great. {{ states('sensor.date__time') }}"

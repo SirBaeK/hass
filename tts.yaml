@@ -1,0 +1,8 @@
+- platform: google
+  cache: true
+  cache_dir: /tts
+  time_memory: 300
+  language: 'en'
+  
+- platform: picotts
+  language: 'en-US'

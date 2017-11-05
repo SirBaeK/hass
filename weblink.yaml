@@ -1,0 +1,7 @@
+  entities:
+    - name: Router
+      url: !secret router
+    - name: IP WebCam
+      url: !secret ipwebcam
+    - name: Home Assistant
+      url: https://home-assistant.io

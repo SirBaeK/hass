@@ -1,0 +1,9 @@
+- automation.flush_tts_cache
+- automation.home_assistant_start__notify
+- automation.hass_update_notifications
+- automation.hass_update_pushbullet
+- automation.log_level_select
+- automation.tts_cache_clear
+- automation.darkorange_theme
+- automation.Sunrise
+- automation.Sunset

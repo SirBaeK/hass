@@ -1,0 +1,8 @@
+theme:
+  name: Theme
+  options:
+    - darkcyan
+    - dark_theme
+    - default
+  initial: default
+  icon: mdi:weather-rainy

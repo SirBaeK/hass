@@ -1,0 +1,121 @@
+- platform: xbox_live
+  api_key: b7bb2ad230cc586f49cc91d4331119016d9ab334
+  xuid: 2535469151829940
+  
+- platform: twitch
+  channels: Kafkicz
+  
+- platform: steam_online
+  api_key: A02B8DAEEB1A15EF5712BCE7ABF94BDD
+  accounts: 76561198249338398
+  
+- platform: time_date
+  display_options:
+    - time
+    - date
+    - date_time
+    - time_date
+    - time_utc
+    
+- platform: mqtt
+  state_topic: 'homeassistant/temperature'
+  name: 'WiFi Teplomer mimo PC'
+  unit_of_measurement: '°C'
+  value_template: '{{ value_json.teplota1 }}'
+  
+- platform: mqtt
+  state_topic: 'homeassistant/temperature'
+  name: 'WiFi Teplomer PC'
+  unit_of_measurement: '°C'
+  value_template: '{{ value_json.teplota2 }}'
+
+- platform: mqtt
+  state_topic: 'homeassistant/temperature'
+  name: 'WiFi Tlacitko'
+  value_template: '{{ value_json.butt }}'
+  
+- platform: mqtt
+  state_topic: "owntracks/kuba/iphone"
+  name: "Battery phone Kuba"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'
+  
+- platform: yr
+  name: yR pocasi
+  forecast: 48
+  monitored_conditions: 
+   - symbol 
+   - temperature
+   - humidity
+   - precipitation
+   - windSpeed
+   - windDirection
+   - cloudiness
+   - lowClouds
+   - mediumClouds
+   - highClouds
+    
+- platform: api_streams
+  name: 'Pripojeno klientu'
+  
+- platform: version
+  name: Verze
+  
+- platform: systemmonitor
+  resouces:
+  - type: memory_use_percent
+  - type: memory_use
+  - type: memory_free
+  - type: swap_use_percent
+  - type: swap_use
+  - type: swap_free
+  - type: disk_free
+    arg: /
+  - type: disk_use_percent
+    arg: /
+  - type: network_in
+    arg: eth0
+  - type: network_out
+    arg: eth0
+  - type: processor_use
+  - type: since_last_boot
+    
+- platform: speedtest
+  minute:
+      - 0
+      - 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+- platform: template
+  sensors:
+    alarm_time:
+      friendly_name: 'Time'
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_slider.alarmhour") | int, states("input_slider.alarmminutes") | int) }}'
+      
+    kodi:
+      friendly_name: 'KODi on DESKTOP2-KUBA'
+      value_template: "{{ 'Online' if is_state('device_tracker.desktop2-kuba', 'home') else 'Offline' }}"
+
+- platform: command_line
+  name: "CPU Temperature"
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "C"
+  value_template: '{{ (value | multiply(0.001) * 1.8 + 32) | round(1) }}'
+
+- platform: openweathermap
+  forecast: 72
+  api_key: !secret owm_api_key
+  monitored_conditions:
+      - weather
+      - temperature
+      - wind_speed
+      - humidity
+      - pressure
+      - clouds
+      - rain
+      - snow
+      
+- platform: moon

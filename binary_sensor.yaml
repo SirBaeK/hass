@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: "Tlacitko"
+  state_topic: 'homeassistant/temperature'
+  value_template: '{{ value_json.tlacitko }}'
+
+- platform: iss
+

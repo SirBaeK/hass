@@ -1,0 +1,7 @@
+- platform: pushbullet
+  name: pushbullet
+  api_key: o.G3pvtp4pVq8cqHgqiXP5Oro9TmPzYAvv
+  
+- platform: kodi
+  name: kodi
+  host: 192.168.2.22

@@ -1,0 +1,3 @@
+script.restart_ha:
+  friendly_name: Restart Home Assistant
+  icon: mdi:script

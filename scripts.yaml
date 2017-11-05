@@ -1,0 +1,12 @@
+'set_current_theme':
+  alias: set_current_theme
+  sequence:
+  - alias: Set Current Theme
+    data:
+      name: default
+    service: frontend.set_theme
+  - wait_template: ''
+
+restart_ha: !include scripts/restart_ha.yaml
+voice_notify: !include scripts/voice_notify.yaml
+

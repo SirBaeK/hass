@@ -1,0 +1,19 @@
+- platform: owntracks
+  waypoints: true
+  waypoint_whitelist:
+    - kuba
+    
+- platform: tplink
+  host: 192.168.2.1
+  username: admin
+  password: admin
+  track_new_devices: yes
+  interval_seconds: 30
+  consider_home: 180
+  
+- platform: nmap_tracker
+  hosts: 192.168.2.1/24
+  home_interval: 10
+  track_new_devices: yes
+  interval_seconds: 10
+  consider_home: 120

@@ -1,0 +1,4 @@
+Scripts:
+  - script.set_current_theme
+  - script.kodi_notification
+  - script.voice_notify

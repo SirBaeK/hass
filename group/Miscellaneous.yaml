@@ -1,0 +1,5 @@
+Miscellaneous:
+  view: yes
+  name: Restart Home Assistant
+  entities:
+  - script.restart_ha
