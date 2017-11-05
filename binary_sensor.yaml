@@ -2,6 +2,8 @@
   name: "Tlacitko"
   state_topic: 'homeassistant/temperature'
   value_template: '{{ value_json.tlacitko }}'
-
+  payload_on: "1.00"
+  payload_off: "0.00"
+  
 - platform: iss
-
+  show_on_map: true

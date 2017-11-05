@@ -1,8 +1,0 @@
-sequence:
-- service: notify.KODI
-  data:
-    title: "Home Assistant"
-    message: "Message to KODI from Home Assistant!"
-    data:
-      displaytime: 20000
-      icon: "warning"

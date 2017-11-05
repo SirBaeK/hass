@@ -1,0 +1,37 @@
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=turn_off, domain=homeassistant>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=turn_on, domain=homeassistant>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=toggle, domain=homeassistant>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=stop, domain=homeassistant>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=restart, domain=homeassistant>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=check_config, domain=homeassistant>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=reload_core_config, domain=homeassistant>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=create, domain=persistent_notification>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.core] Bus:Handling <Event service_registered[L]: service=dismiss, domain=persistent_notification>
+2017-11-05 11:58:29 INFO (MainThread) [homeassistant.bootstrap] Home Assistant core initialized
+2017-11-05 11:58:30 INFO (MainThread) [homeassistant.loader] Loaded history from homeassistant.components.history
+2017-11-05 11:58:30 INFO (MainThread) [homeassistant.loader] Loaded recorder from homeassistant.components.recorder
+2017-11-05 11:58:30 INFO (MainThread) [homeassistant.loader] Loaded http from homeassistant.components.http
+2017-11-05 11:58:30 INFO (MainThread) [homeassistant.loader] Loaded logger from homeassistant.components.logger
+2017-11-05 11:58:30 INFO (MainThread) [homeassistant.setup] Setting up logger
+2017-11-05 11:58:32 DEBUG (MainThread) [homeassistant.components.mqtt] Received message on homeassistant/temperature: {"teplota1":"20.00","teplota2":"32.63","svetylka":"0.00","tlacitko":"0.00"}
+2017-11-05 11:58:32 DEBUG (MainThread) [homeassistant.components.mqtt] Received message on homeassistant/status: offline
+2017-11-05 11:58:33 DEBUG (MainThread) [homeassistant.components.mqtt] Received message on homeassistant/status: online
+2017-11-05 11:58:33 WARNING (Recorder) [homeassistant.components.recorder] Ended unfinished session (id=4 from 2017-11-05 10:57:09.073209)
+2017-11-05 11:58:34 ERROR (MainThread) [homeassistant.config] Invalid config for [group]: Entity ID switch.wake_desktop2-kuba is an invalid entity id for dictionary value @ data['group']['Wake on LAN']['entities']. Got ['switch.WAKE_DESKTOP2-KUBA']. (See /root/.homeassistant/configuration.yaml, line 58). Please check the docs at https://home-assistant.io/components/group/
+2017-11-05 11:58:34 ERROR (MainThread) [homeassistant.setup] Setup failed for group: Invalid config.
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.version
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.template
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.time_date
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.api_streams
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.moon
+2017-11-05 11:58:35 ERROR (MainThread) [homeassistant.setup] Unable to setup dependencies of script. Setup failed for dependencies: group
+2017-11-05 11:58:35 ERROR (MainThread) [homeassistant.setup] Setup failed for script: Could not setup all dependencies.
+2017-11-05 11:58:35 ERROR (MainThread) [homeassistant.setup] Unable to setup dependencies of automation. Setup failed for dependencies: group
+2017-11-05 11:58:35 ERROR (MainThread) [homeassistant.setup] Setup failed for automation: Could not setup all dependencies.
+2017-11-05 11:58:35 ERROR (MainThread) [homeassistant.setup] Unable to setup dependencies of switch. Setup failed for dependencies: group
+2017-11-05 11:58:35 ERROR (MainThread) [homeassistant.setup] Setup failed for switch: Could not setup all dependencies.
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.mqtt
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.mqtt
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.mqtt
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.mqtt
+2017-11-05 11:58:35 INFO (MainThread) [homeassistant.components.sensor] Setting up sensor.mqtt

@@ -11,7 +11,9 @@ homeassistant:
 frontend:
   themes: !include_dir_merge_named themes/
 
-# Enables configuration UI
+ios:
+
+  # Enables configuration UI
 config:
 
 http:
@@ -36,7 +38,6 @@ discovery:
 conversation:
 
 recorder:
-  purge_days: 30
 # Enables support for tracking state changes over time
 history:
 
@@ -68,13 +69,12 @@ device_tracker: !include device_tracker.yaml
 notify: !include notify.yaml
 media_player: !include media_player.yaml
 weather: !include weather.yaml
-switch: !include switch.yaml
+#switch: !include switch.yaml
 shell_command: !include shell_commands.yaml
 weblink: !include weblink.yaml
 camera: !include camera.yaml
-android_ip_webcam: !include android_ip_webcam.yaml
+#android_ip_webcam: !include android_ip_webcam.yaml
 mqtt: !include mqtt.yaml
-binary_sensor: !include binary_sensor.yaml
 
  
 shopping_list:

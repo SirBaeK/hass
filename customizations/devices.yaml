@@ -1,10 +1,8 @@
-switch.DESKTOP2-KUBA:
- icon: mdi:laptop-windows
 device_tracker.router:
  icon: mdi:router-wireless
-device_tracker.DESKTOP2-KUBA:
-  icon: mdi:laptop-windows
-device_tracker.mamka:
+#device_tracker.DESKTOP2-KUBA:
+#  icon: mdi:laptop-windows
+device_tracker.mamkatablet:
   icon: mdi:cellphone-android
-device_tracker.iphone:
+device_tracker.kubaiphone:
   icon: mdi:cellphone-iphone

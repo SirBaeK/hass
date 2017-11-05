@@ -33,7 +33,7 @@
     platform: time
     at: '2:35:00'
   action:
-   service: tts.clear_cache
+    service: tts.clear_cache
    
 - alias: hass_start
   id: 'Home Assistant Start - Notify'
@@ -43,7 +43,7 @@
   action:
     service: notify.PUSHBULLET
     data:
-      message: 'Home Assistant Start at {{ states('sensor.date__time') }}'
+      message: "Home Assistant Start at {{ states('sensor.date__time') }}"
 
 - alias: hass_stop
   id: 'Home Assistant Stop - Notify'
@@ -53,7 +53,7 @@
   action:
     service: notify.PUSHBULLET
     data:
-      message: 'Home Assistant Stop at {{ states('sensor.date__time') }}'
+      message: "Home Assistant Stop at {{ states('sensor.date__time') }}"
 
 - alias: darkorange_theme
   id: 'Nastav theme na darkorange'
@@ -74,10 +74,10 @@
     entity_id: input_select.pcoptions
     to: "Restart"
   action:
-   - service: shell_command.restart_pc
-   - service: notify.PUSHBULLET
-     data:
-       message: "PC Restart at {{ states('sensor.date__time') }}"  
+  - service: shell_command.restart_pc
+  - service: notify.PUSHBULLET
+    data:
+      message: "PC Restart at {{ states('sensor.date__time') }}"  
 
 ####################################################
 #                   PC Shutdown                    #
@@ -90,10 +90,10 @@
     entity_id: input_select.pcoptions
     to: "Shutdown"
   action:
-   - service: shell_command.shutdown_pc
-   - service: notify.PUSHBULLET
-     data:
-       message: "PC Shutdown at {{ states('sensor.date__time') }}"
+  - service: shell_command.shutdown_pc
+  - service: notify.PUSHBULLET
+    data:
+      message: "PC Shutdown at {{ states('sensor.date__time') }}"
 
 ####################################################
 #                   PC Sleep                       #
@@ -106,10 +106,10 @@
     entity_id: input_select.pcoptions
     to: "Sleep"
   action:
-   - service: shell_command.sleep_pc
-   - service: notify.PUSHBULLET
-     data:
-       message: "PC Sleep at {{ states('sensor.date__time') }}"
+  - service: shell_command.sleep_pc
+  - service: notify.PUSHBULLET
+    data:
+      message: "PC Sleep at {{ states('sensor.date__time') }}"
 
 ####################################################
 #                   PC Hibernate                   #
@@ -122,10 +122,10 @@
     entity_id: input_select.pcoptions
     to: "Hibernate"
   action:
-   - service: shell_command.hibernate_pc
-   - service: notify.PUSHBULLET
-     data:
-       message: "PC Hibernated at {{ states('sensor.date__time') }}"
+  - service: shell_command.hibernate_pc
+  - service: notify.PUSHBULLET
+    data:
+      message: "PC Hibernated at {{ states('sensor.date__time') }}"
        
 - id: Notify on sunrise
   alias: Sunrise
@@ -134,13 +134,12 @@
     event: sunrise
     offset: '+00:00:00'
   action:
-    # Actions are scripts so can also be a list of actions
-    - service: notify.pushbullet
-      data:
-        message: "Beautiful sunrise!"
-    - service: notify.PUSHBULLET
-      data:
-        message: "The sun is up. Wake Up! {{ states('sensor.date__time') }}"
+  - service: notify.pushbullet
+    data:
+      message: "Beautiful sunrise!"
+  - service: notify.PUSHBULLET
+    data:
+      message: "The sun is up. Wake Up! {{ states('sensor.date__time') }}"
 
 - id: Notify on sunset
   alias: Sunset
@@ -149,10 +148,9 @@
     event: sunset
     offset: '+00:00:00'
   action:
-    # Actions are scripts so can also be a list of actions
-    - service: notify.PUSHBULLET
-      data:
-        message: "Beautiful sunset!"
-    - service: notify.PUSHBULLET
-      data:
-        message: "Oh wow you really missed something great. {{ states('sensor.date__time') }}"
+  - service: notify.PUSHBULLET
+    data:
+      message: "Beautiful sunset!"
+  - service: notify.PUSHBULLET
+    data:
+      message: "Oh wow you really missed something great. {{ states('sensor.date__time') }}"

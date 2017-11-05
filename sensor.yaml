@@ -32,8 +32,14 @@
 - platform: mqtt
   state_topic: 'homeassistant/temperature'
   name: 'WiFi Tlacitko'
-  value_template: '{{ value_json.butt }}'
+  value_template: '{{ value_json.tlacitko }}'
   
+- platform: mqtt
+  state_topic: 'homeassistant/temperature'
+  name: 'WiFi Svetylka'
+  value_template: '{{ value_json.svetylka }}'
+  
+
 - platform: mqtt
   state_topic: "owntracks/kuba/iphone"
   name: "Battery phone Kuba"
@@ -99,11 +105,11 @@
       friendly_name: 'KODi on DESKTOP2-KUBA'
       value_template: "{{ 'Online' if is_state('device_tracker.desktop2-kuba', 'home') else 'Offline' }}"
 
-- platform: command_line
-  name: "CPU Temperature"
-  command: "cat /sys/class/thermal/thermal_zone0/temp"
-  unit_of_measurement: "C"
-  value_template: '{{ (value | multiply(0.001) * 1.8 + 32) | round(1) }}'
+#- platform: command_line
+#  name: "CPU Temperature"
+#  command: "cat /sys/class/thermal/thermal_zone0/temp"
+#  unit_of_measurement: "C"
+#  value_template: '{{ (value | multiply(0.001) * 1.8 + 32) | round(1) }}'
 
 - platform: openweathermap
   forecast: 72

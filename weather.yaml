@@ -1,5 +1,5 @@
 - platform: openweathermap
   api_key: !secret owm_api_key
-  name: OWM predpoved pro toto misto
+  name: OWM
   latitude: !secret latitudeH
   longitude: !secret longitudeH

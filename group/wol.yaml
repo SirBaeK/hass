@@ -1,2 +1,3 @@
 Wake on LAN:
-  - switch.DESKTOP2-KUBA
+  entities:
+ # - switch.WAKE_DESKTOP2-KUBA
