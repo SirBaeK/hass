@@ -1,6 +1,6 @@
 - platform: pushbullet
   name: pushbullet
-  api_key: o.G3pvtp4pVq8cqHgqiXP5Oro9TmPzYAvv
+  api_key: !secret pushbullet_api_key
   
 - platform: kodi
   name: kodi

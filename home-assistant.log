@@ -1,8 +1,9 @@
-2017-11-05 05:03:19 ERROR (Thread-2) [homeassistant.util.yaml] while parsing a block mapping
+2017-11-05 06:52:19 ERROR (Thread-2) [homeassistant.util.yaml] Secret owm_api_key not defined
+2017-11-05 06:52:19 ERROR (Thread-2) [homeassistant.util.yaml] while parsing a block mapping
   in "/root/.homeassistant/automations.yaml", line 46, column 7
 expected <block end>, but found '<scalar>'
   in "/root/.homeassistant/automations.yaml", line 46, column 52
-2017-11-05 05:03:19 ERROR (MainThread) [homeassistant.bootstrap] Error loading /root/.homeassistant/configuration.yaml: while parsing a block mapping
+2017-11-05 06:52:19 ERROR (MainThread) [homeassistant.bootstrap] Error loading /root/.homeassistant/configuration.yaml: while parsing a block mapping
   in "/root/.homeassistant/automations.yaml", line 46, column 7
 expected <block end>, but found '<scalar>'
   in "/root/.homeassistant/automations.yaml", line 46, column 52

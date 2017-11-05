@@ -24,7 +24,7 @@ from urllib.parse import urlparse, parse_qs, unquote
 
 
 ### Some options for you to change
-LISTENIP = "0.0.0.0"
+LISTENIP = "192.168.2.14"
 LISTENPORT = 3218
 # Set BASEPATH to something like "/home/hass/.homeassistant/" if you're not running the
 # configurator from that path
@@ -33,7 +33,7 @@ BASEPATH = /root/.homeassistant/
 SSL_CERTIFICATE = None
 SSL_KEY = None
 # Set the destination where the HASS API is reachable
-HASS_API = "http://192.168.2.14:8123/api/"
+HASS_API = "http://127.0.0.1:8123/api/"
 # If a password is required to access the API, set it in the form of "password"
 # if you have HA ignoring SSL locally this is not needed if on same machine.
 HASS_API_PASSWORD = None
@@ -3634,3 +3634,4 @@ def main(args):
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     main(sys.argv[1:])
+settings.conf
