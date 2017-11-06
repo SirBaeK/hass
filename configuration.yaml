@@ -45,7 +45,7 @@ history:
 logbook:
 
 logger:
-  default: warn
+  default: info
   logs:
     homeassistant.components.mqtt: debug
     homeassistant.components.device_tracker: critical

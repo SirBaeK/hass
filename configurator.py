@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-"""
-Configurator for Home Assistant.
+# -*- coding: utf-8 -*
+"""Configurator for Home Assistant.
 https://github.com/danielperna84/hass-configurator
 """
 import os
@@ -28,7 +27,7 @@ LISTENIP = "192.168.2.14"
 LISTENPORT = 3218
 # Set BASEPATH to something like "/home/hass/.homeassistant/" if you're not running the
 # configurator from that path
-BASEPATH = /root/.homeassistant/
+BASEPATH = "/root/.homeassistant/"
 # Set the paths to a certificate and the key if you're using SSL, e.g "/etc/ssl/certs/mycert.pem"
 SSL_CERTIFICATE = None
 SSL_KEY = None

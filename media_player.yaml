@@ -3,3 +3,8 @@
   port: 8080
   name: Kodi
   enable_websocket: false
+  
+- platform: mpchc
+  name: VLC
+  host: http://192.168.2.2
+  port: 13579
